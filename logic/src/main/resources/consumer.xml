@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="demotest-consumer" owner="programmer" organization="dubbox"/>
+    <!--向 zookeeper 订阅 provider 的地址，由 zookeeper 定时推送-->
+    <dubbo:registry address="zookeeper://192.168.43.124:2181"/>
+    <!--使用 dubbo 协议调用定义好的 api.PermissionService 接口-->
+    <dubbo:reference id="orderService" interface="OrderService" />
+    <dubbo:reference id="storageService" interface="StorageService" />
+    <dubbo:reference id="uidGenerator" interface="com.baidu.fsg.uid.UidGenerator" />
+
+    <bean id="businessService" class="BusinessServiceImpl">
+        <property name="orderService" ref="orderService"/>
+        <property name="storageService" ref="storageService"/>
+        <property name="uidGenerator" ref="uidGenerator"/>
+    </bean>
+
+    <bean class="io.seata.spring.annotation.GlobalTransactionScanner">
+        <constructor-arg value="dubbo-logic-service"/>
+        <constructor-arg value="my_test_tx_group"/>
+    </bean>
+</beans>
