@@ -10,7 +10,7 @@ public class StorageProvider {
             System.out.println(context.getDisplayName() + ": here");
             context.start();
             System.out.println("服务已经启动...");
-            System.in.read();
+            System.in.read() ;
         }
 
 }
