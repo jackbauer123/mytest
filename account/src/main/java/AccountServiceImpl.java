@@ -44,10 +44,14 @@ public class AccountServiceImpl  implements AccountService {
                     String s = jedis.get(order_no + userId + money);
                     if(StringUtils.isNotEmpty(s)) return ;
                     System.out.println("order_no:"+order_no);
-                    CatchExceptionInfo execute = new MytestHystrixCommand(order_no, userId, money, jdbcTemplate).execute();
+                    //CatchExceptionInfo execute = new MytestHystrixCommand(order_no, userId, money, jdbcTemplate).execute();
+                    System.out.println("扣款开始！！！");
+                    Object args[]={money,userId};
+                    jdbcTemplate.update("update account_tbl set money=money - ? where user_id=?",args);
                     jedis.set(order_no + userId + money,"1");
-                    if(Objects.nonNull(execute.getException())) throw new RuntimeException(execute.getException());
-                    System.out.println("扣款成功！！！");
+                    //if(Objects.nonNull(execute.getException())) throw new RuntimeException(execute.getException());
+                    throw new RuntimeException("test.....");
+                    //System.out.println("扣款成功！！！");
                 } finally {
                     lock.unlock();
                 }

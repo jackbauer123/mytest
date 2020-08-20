@@ -3,13 +3,16 @@ import com.netflix.hystrix.HystrixCommandGroupKey;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Objects;
+
 public class OrderServiceImpl  implements OrderService {
 
     private OrderDAO orderDAO;
 
-    private AccountService accountService;
 
     private JdbcTemplate jdbcTemplate;
+    
+    private CommandHelloWorld commandHelloWorld;
 
 
 
@@ -18,7 +21,11 @@ public class OrderServiceImpl  implements OrderService {
     public Order create(long order_no,String userId, String commodityCode, int orderCount) {
         System.out.println("订单开始！！！");
         int orderMoney = calculate(commodityCode, orderCount);
-        accountService.debit(order_no,userId, orderMoney);
+        OrderBean orderBean = new OrderBean();
+        orderBean.order_no=order_no;orderBean.orderMoney=orderMoney;orderBean.userId=userId;
+        commandHelloWorld.setOrderBean(orderBean);
+        CatchExceptionInfo execute = commandHelloWorld.execute();
+        if(Objects.nonNull(execute.getException())) throw new RuntimeException("orderException...");
         orderDAO=new OrderDAO(jdbcTemplate);
         Order order = new Order();
         order.userId = userId;
@@ -35,11 +42,12 @@ public class OrderServiceImpl  implements OrderService {
         return 10;
     }
 
-    public void setAccountService(AccountService accountService) {
-        this.accountService = accountService;
-    }
 
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
+    }
+
+    public void setCommandHelloWorld(CommandHelloWorld commandHelloWorld) {
+        this.commandHelloWorld = commandHelloWorld;
     }
 }
