@@ -19,7 +19,7 @@ public class Consumer {
         UidGenerator uidGenerator = (UidGenerator)context.getBean("uidGenerator");
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         BusinessService businessService = (BusinessService)context.getBean("businessService");
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1; i++) {
              executorService.execute(()->businessService.purchase(uidGenerator.getUID(),"jack","001",1));
         }
         executorService.shutdown();
