@@ -26,6 +26,10 @@ public class Consumer {
         executorService.awaitTermination(Integer.MAX_VALUE, TimeUnit.SECONDS);
         System.out.println("consumer end:"+(LocalTime.now().getSecond()-second));
 
+
+
+
+
     }
 
 }
