@@ -1,7 +1,4 @@
-import com.netflix.hystrix.HystrixCommand;
-import com.netflix.hystrix.HystrixCommandGroupKey;
-import com.netflix.hystrix.HystrixCommandKey;
-import com.netflix.hystrix.HystrixCommandProperties;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.RandomUtils;
 import org.redisson.api.RLock;
@@ -10,14 +7,14 @@ import redis.clients.jedis.Jedis;
 
 import java.util.concurrent.TimeUnit;
 
-public class MytestHystrixCommand extends HystrixCommand<CatchExceptionInfo> {
+public class MytestHystrixCommand /*extends HystrixCommand<CatchExceptionInfo>*/ {
 
     JdbcTemplate jdbcTemplate;
     long order_no;
     String userId;
     int money;
 
-    public MytestHystrixCommand(long order_no,String userId,int money,JdbcTemplate jdbcTemplate) {
+    /*public MytestHystrixCommand(long order_no,String userId,int money,JdbcTemplate jdbcTemplate) {
         //super(HystrixCommandGroupKey.Factory.asKey("ExampleGroup"));
         super(Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("ExampleGroup"))
                 .andCommandPropertiesDefaults(HystrixCommandProperties.Setter()
@@ -49,7 +46,7 @@ public class MytestHystrixCommand extends HystrixCommand<CatchExceptionInfo> {
         //System.out.println("打印异常结束。。。。。。。。。。。。。。。");
         return new CatchExceptionInfo(this.getExecutionException(),this.getFallbackMethodName());
 
-    }
+    }*/
 
 
 }

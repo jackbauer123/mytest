@@ -1,5 +1,5 @@
 FROM openjdk:8-jre
-MAINTAINER yuanzhibing
+MAINTAINER yuanzhibin
 
 ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/share/myservice/myservice.jar"]
 

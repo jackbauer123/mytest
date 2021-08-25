@@ -1,9 +1,8 @@
-import com.netflix.hystrix.HystrixCommand;
-import com.netflix.hystrix.HystrixCommandGroupKey;
 
-public class CommandHelloWorld extends HystrixCommand<CatchExceptionInfo> {
 
-    private  AccountService accountService ;
+public class CommandHelloWorld /*extends HystrixCommand<CatchExceptionInfo> */{
+
+    /*private  AccountService accountService ;
 
     private  OrderBean orderBean;
 
@@ -30,5 +29,5 @@ public class CommandHelloWorld extends HystrixCommand<CatchExceptionInfo> {
 
     public void setAccountService(AccountService accountService) {
         this.accountService = accountService;
-    }
+    }*/
 }

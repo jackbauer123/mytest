@@ -1,5 +1,4 @@
-import com.netflix.hystrix.HystrixCommand;
-import com.netflix.hystrix.HystrixCommandGroupKey;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,9 +22,9 @@ public class OrderServiceImpl  implements OrderService {
         int orderMoney = calculate(commodityCode, orderCount);
         OrderBean orderBean = new OrderBean();
         orderBean.order_no=order_no;orderBean.orderMoney=orderMoney;orderBean.userId=userId;
-        commandHelloWorld.setOrderBean(orderBean);
-        CatchExceptionInfo execute = commandHelloWorld.execute();
-        if(Objects.nonNull(execute.getException())) throw new RuntimeException("orderException...");
+        //commandHelloWorld.setOrderBean(orderBean);
+        //CatchExceptionInfo execute = commandHelloWorld.execute();
+        //if(Objects.nonNull(execute.getException())) throw new RuntimeException("orderException...");
         orderDAO=new OrderDAO(jdbcTemplate);
         Order order = new Order();
         order.userId = userId;

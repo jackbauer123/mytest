@@ -19,5 +19,35 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.10</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <username>bauer</username>
+                    <password>ABCabc123</password>
+                    <!--<useMavenSettingsForAuth>true</useMavenSettingsForAuth>-->
+                    <repository>db.com/yuan/${project.artifactId}</repository>
+                    <tag>latest</tag>
+                    <buildArgs>
+                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-</project>
+
+
+        </project>
