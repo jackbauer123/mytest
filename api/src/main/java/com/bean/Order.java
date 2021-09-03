@@ -1,3 +1,5 @@
+package com.bean;
+
 import java.io.Serializable;
 
 public class Order implements Serializable {

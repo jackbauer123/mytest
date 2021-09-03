@@ -1,7 +1,9 @@
-import com.baidu.fsg.uid.UidGenerator;
-import io.seata.spring.annotation.GlobalTransactional;
+package com.logic;
 
-import javax.annotation.Resource;
+import com.baidu.fsg.uid.UidGenerator;
+import com.service.OrderService;
+import com.service.StorageService;
+import io.seata.spring.annotation.GlobalTransactional;
 
 public class BusinessServiceImpl implements BusinessService {
 

@@ -1,3 +1,6 @@
+package com.order;
+
+import com.bean.Order;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class OrderDAO {

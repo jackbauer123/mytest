@@ -1,8 +1,10 @@
+package com.account;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;
 
-public class StorageProvider {
+public class AccountProvider {
 
         public static void main(String[] args) throws IOException {
 
@@ -10,7 +12,7 @@ public class StorageProvider {
             System.out.println(context.getDisplayName() + ": here");
             context.start();
             System.out.println("服务已经启动...");
-            System.in.read() ;
+            System.in.read();
         }
 
 }

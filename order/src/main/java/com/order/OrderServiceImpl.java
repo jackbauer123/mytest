@@ -1,8 +1,8 @@
+package com.order;
 
+import com.bean.Order;
+import com.service.OrderService;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.Objects;
 
 public class OrderServiceImpl  implements OrderService {
 
@@ -17,13 +17,13 @@ public class OrderServiceImpl  implements OrderService {
 
 
     //@Transactional
-    public Order create(long order_no,String userId, String commodityCode, int orderCount) {
+    public Order create(long order_no, String userId, String commodityCode, int orderCount) {
         System.out.println("订单开始！！！");
         int orderMoney = calculate(commodityCode, orderCount);
         OrderBean orderBean = new OrderBean();
         orderBean.order_no=order_no;orderBean.orderMoney=orderMoney;orderBean.userId=userId;
         //commandHelloWorld.setOrderBean(orderBean);
-        //CatchExceptionInfo execute = commandHelloWorld.execute();
+        //com.order.CatchExceptionInfo execute = commandHelloWorld.execute();
         //if(Objects.nonNull(execute.getException())) throw new RuntimeException("orderException...");
         orderDAO=new OrderDAO(jdbcTemplate);
         Order order = new Order();

@@ -13,8 +13,8 @@
 
     <bean name="accountDataSource" class="com.alibaba.druid.pool.DruidDataSource"
           init-method="init" destroy-method="close">
-        <property name="url" value="jdbc:mysql://192.168.43.124:3306/spring"/>
-        <property name="username" value="root"/>
+        <property name="url" value="jdbc:mysql://10.168.1.157:3306/spring"/>
+        <property name="username" value="jack"/>
         <property name="password" value="123456"/>
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="initialSize" value="0" />

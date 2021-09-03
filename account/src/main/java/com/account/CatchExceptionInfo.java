@@ -1,3 +1,5 @@
+package com.account;
+
 public class CatchExceptionInfo {
 
 
@@ -5,7 +7,7 @@ public class CatchExceptionInfo {
 
     private String name;
 
-    public CatchExceptionInfo(Throwable exception, String name){
+    public CatchExceptionInfo(Throwable exception,String name){
         this.exception=exception;
         this.name=name;
     }
