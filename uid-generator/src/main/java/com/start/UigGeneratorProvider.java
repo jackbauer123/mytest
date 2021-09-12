@@ -6,13 +6,13 @@ import java.io.IOException;
 
 public class UigGeneratorProvider {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"classpath:uid/mybatis-spring.xml",
                 "classpath:provider.xml"});
         System.out.println(context.getDisplayName() + ": here");
         context.start();
         System.out.println("服务已经启动...");
-        System.in.read();
+        Thread.currentThread().join();
     }
 }
