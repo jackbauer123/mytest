@@ -2,16 +2,13 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
-        http://www.springframework.org/schema/tx
-        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+        http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
 
 
     <bean name="storageDataSource" class="com.alibaba.druid.pool.DruidDataSource"
           init-method="init" destroy-method="close">
-        <property name="url" value="jdbc:mysql://10.168.1.157:3306/spring"/>
+        <property name="url" value="jdbc:mysql://10.168.1.157:3306/spring?useSSL=false"/>
         <property name="username" value="jack"/>
         <property name="password" value="123456"/>
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
@@ -45,8 +42,8 @@
     </bean>
 
 
-    <!-- 事物注解驱动 -->
-    <tx:annotation-driven transaction-manager="transactionManager" />
+    <!-- 事物注解驱动
+    <tx:annotation-driven transaction-manager="transactionManager" />-->
 
 
     <bean class="io.seata.spring.annotation.GlobalTransactionScanner">

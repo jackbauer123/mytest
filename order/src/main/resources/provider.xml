@@ -20,10 +20,10 @@
     <!--具体实现该接口的 bean-->
     <bean id="orderService" class="com.order.OrderServiceImpl" >
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
-        <property name="commandHelloWorld" ref="commandHelloWorld"/>
+        <!--<property name="commandHelloWorld" ref="commandHelloWorld"/>-->
     </bean>
 
-    <bean id="commandHelloWorld" class="com.order.CommandHelloWorld">
+    <!--<bean id="commandHelloWorld" class="com.order.CommandHelloWorld">
         <property name="accountService" ref="accountService"></property>
-    </bean>
+    </bean>-->
 </beans>

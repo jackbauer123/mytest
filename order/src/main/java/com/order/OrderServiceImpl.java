@@ -11,7 +11,7 @@ public class OrderServiceImpl  implements OrderService {
 
     private JdbcTemplate jdbcTemplate;
     
-    private CommandHelloWorld commandHelloWorld;
+    //private CommandHelloWorld commandHelloWorld;
 
 
 
@@ -46,7 +46,7 @@ public class OrderServiceImpl  implements OrderService {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void setCommandHelloWorld(CommandHelloWorld commandHelloWorld) {
-        this.commandHelloWorld = commandHelloWorld;
-    }
+    //public void setCommandHelloWorld(CommandHelloWorld commandHelloWorld) {
+    //    this.commandHelloWorld = commandHelloWorld;
+    //}
 }

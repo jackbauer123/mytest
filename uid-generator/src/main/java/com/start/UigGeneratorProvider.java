@@ -1,3 +1,5 @@
+package com.start;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;
