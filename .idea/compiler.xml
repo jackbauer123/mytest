@@ -15,6 +15,12 @@
         <module name="uid-generator" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8" />
+    <bytecodeTargetLevel target="8">
+      <module name="account" target="1.8" />
+      <module name="api" target="1.5" />
+      <module name="logic" target="1.8" />
+      <module name="order" target="1.8" />
+      <module name="storage" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
