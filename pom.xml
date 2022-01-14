@@ -27,10 +27,11 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>samples-common</module>
-        <module>order</module>
-        <module>account</module>
-        <module>logic</module>
         <module>storage</module>
+        <module>account</module>
+        <module>order</module>
+        <module>logic</module>
+        
     </modules>
 
     <properties>
