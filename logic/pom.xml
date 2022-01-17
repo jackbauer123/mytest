@@ -111,7 +111,7 @@
                 <configuration>
                     <username>bauer</username>
                     <password>ABCabc123</password>
-                    <!--<useMavenSettingsForAuth>true</useMavenSettingsForAuth>-->
+                    <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
                     <repository>db.com/yuan/${project.artifactId}</repository>
                     <tag>latest</tag>
                     <buildArgs>
