@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: nginx-deployment-${JOB_NAME}
   replicas: 2 # tells deployment to run 2 pods matching the template
   template:
     metadata:
