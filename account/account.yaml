@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx-deployment-${JOB_NAME}
 spec:
   selector:
     matchLabels:
@@ -10,7 +10,8 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx
+        build_number: ${BUILD_NUMBER}
+        app: nginx-deployment-${JOB_NAME}
     spec:
       containers:
       - name: nginx
