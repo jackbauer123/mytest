@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: account
-        image: jackbuer123/account:$image_version
+        image: jackbuer123/account:${KUBECONFIG.BUILD_ID}
         ports:
         - containerPort: 80
