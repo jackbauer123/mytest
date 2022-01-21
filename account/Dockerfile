@@ -4,5 +4,5 @@ MAINTAINER David Flemström <dflemstr@spotify.com>
 #ADD target/lib          /usr/share/myservice/lib
 # Add the service itself
 
-ADD account/target/*.jar /usr/share/myservice/myservice.jar
+ADD target/*.jar /usr/share/myservice/myservice.jar
 ENTRYPOINT ["/usr/local/openjdk-8/bin/java", "-jar", "/usr/share/myservice/myservice.jar"]
