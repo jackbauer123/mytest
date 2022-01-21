@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: order
-        image: jackbauer123/order:${env.BUILD_NUMBER}
+        image: jackbauer123/order:<BUILD_TAG>
         ports:
         - containerPort: 80
