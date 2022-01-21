@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: account
-        image: jackbuer123/account:${BUILD_NUMBER}
+        image: jackbuer123/account:${image_version}
         ports:
         - containerPort: 80
