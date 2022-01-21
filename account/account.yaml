@@ -15,8 +15,5 @@ spec:
       containers:
       - name: account
         image: jackbuer123/account:<BUILD_TAG>
-        env:
-            - name: branch
-              value: <BRANCH_NAME>
         ports:
         - containerPort: 80
