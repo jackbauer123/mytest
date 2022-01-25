@@ -51,6 +51,9 @@
         <nacos-client.verison>1.0.0</nacos-client.verison>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
+        <maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>
+        <nxrm3.staging.tag>${project.name}-${project.artifactId}-${project.version}-${maven.build.timestamp}</nxrm3.staging.tag>
+        <nexusUrl>http://nexus.yuanzhibin.com</nexusUrl>
     </properties>
 
     <dependencyManagement>
@@ -159,26 +162,28 @@
   <build>
         <plugins>
 
-            <plugin>
+           <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nxrm3-maven-plugin</artifactId>
-                <!-- replace plugin version with the latest available -->
-                <!-- https://search.maven.org/search?q=a:nxrm3-maven-plugin -->
-                <version>1.0.3</version>
+                <version>1.0.2</version>
                 <extensions>true</extensions>
+                <executions>
+                  <execution>
+                    <id>default-deploy</id>
+                    <phase>deploy</phase>
+                    <goals>
+                      <goal>deploy</goal>
+                    </goals>
+                  </execution>
+                </executions>
                 <configuration>
-                    <nexusUrl>http://nexus.yuanzhibin.com</nexusUrl>
-
-                    <!-- The server "id" element from settings to use authentication from settings.xml-->
+                    <nexusUrl>${nexusUrl}</nexusUrl>
+                    <tag>${nxrm3.staging.tag}</tag>
                     <serverId>nexus</serverId>
-
-                    <!-- Which repository to deploy to -->
-                    <repository>maven-proxy</repository>
-
-                    <!-- Skip the staging deploy mojo -->
+                    <repository>maven-releases</repository>
                     <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
                 </configuration>
-            </plugin>
+              </plugin>
         </plugins>
     </build>
   
