@@ -181,7 +181,7 @@
                     <!--<tag>${nxrm3.staging.tag}</tag>-->
                     <serverId>nexus</serverId>
                     <repository>maven-proxy</repository>
-                    <!--<skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>-->
+                    <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
                 </configuration>
               </plugin>
         </plugins>
