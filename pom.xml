@@ -177,7 +177,7 @@
                   </execution>
                 </executions>
                 <configuration>
-                    <nexusUrl>${nexusUrl}</nexusUrl>
+                    <nexusUrl>http://nexus.yuanzhibin.com/repository</nexusUrl>
                     <!--<tag>${nxrm3.staging.tag}</tag>-->
                     <serverId>nexus</serverId>
                     <repository>maven-proxy</repository>
