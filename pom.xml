@@ -155,5 +155,32 @@
             <version>${dubbo.version}</version>
         </dependency>
     </dependencies>
+    
+  <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nxrm3-maven-plugin</artifactId>
+                <!-- replace plugin version with the latest available -->
+                <!-- https://search.maven.org/search?q=a:nxrm3-maven-plugin -->
+                <version>1.0.3</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <nexusUrl>http://nexus.yuanzhibin.com</nexusUrl>
+
+                    <!-- The server "id" element from settings to use authentication from settings.xml-->
+                    <serverId>nexus</serverId>
+
+                    <!-- Which repository to deploy to -->
+                    <repository>maven-proxy</repository>
+
+                    <!-- Skip the staging deploy mojo -->
+                    <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+  
 
 </project>
