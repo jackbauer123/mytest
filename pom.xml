@@ -158,6 +158,18 @@
             <version>${dubbo.version}</version>
         </dependency>
     </dependencies>
+  
+  
+<distributionManagement>
+      <repository>
+        <id>maven-releases</id>
+        <url>http://nexus.yuanzhibin.com/repository/maven-releases/</url>
+      </repository>
+      <snapshotRepository>
+        <id>maven-snapshots</id>
+        <url>http://nexus.yuanzhibin.com/repository/maven-snapshots/</url>
+      </snapshotRepository>
+    </distributionManagement>
     
   <build>
         <plugins>
