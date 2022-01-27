@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: storage
-        image: jackbauer123/storage:<BUILD_TAG>
+        image: harbor.yuanzhibin.com/library/storage:<BUILD_TAG>
         ports:
         - containerPort: 80
