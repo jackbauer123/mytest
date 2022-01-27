@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: logic
-        image: jackbauer123/logic:<BUILD_TAG>
+        image: harbor.yuanzhibin.com/library/logic:<BUILD_TAG>
         ports:
         - containerPort: 80
