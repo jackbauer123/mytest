@@ -16,4 +16,4 @@ spec:
       - name: account
         image: harbor.yuanzhibin.com/library/account:<BUILD_TAG>
         ports:
-        - containerPort: 80
+        - containerPort: 8102

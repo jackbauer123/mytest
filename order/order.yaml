@@ -16,4 +16,4 @@ spec:
       - name: order
         image: harbor.yuanzhibin.com/library/order:<BUILD_TAG>
         ports:
-        - containerPort: 80
+        - containerPort: 8101

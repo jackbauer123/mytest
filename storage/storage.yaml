@@ -16,4 +16,4 @@ spec:
       - name: storage
         image: harbor.yuanzhibin.com/library/storage:<BUILD_TAG>
         ports:
-        - containerPort: 80
+        - containerPort: 8100
