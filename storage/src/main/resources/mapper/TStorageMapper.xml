@@ -19,7 +19,7 @@
     </sql>
 
     <update id="decreaseStorage">
-        update storage.t_storage set count = count-${count} where commodity_code = #{commodityCode}
+        update t_storage set count = count-${count} where commodity_code = #{commodityCode}
     </update>
 
 </mapper>
