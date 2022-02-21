@@ -157,11 +157,11 @@
             <artifactId>dubbo-config-spring</artifactId>
             <version>${dubbo.version}</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>com.ctrip.framework.apollo</groupId>
             <artifactId>apollo-client</artifactId>
             <version>1.7.0</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
   
   
@@ -171,7 +171,7 @@
         <url>http://nexus.yuanzhibin.com:9080/repository/maven-releases/</url>
       </repository>
       <snapshotRepository>
-        <id>nexus</id>
+        <id>nexus-snapshots</id>
         <url>http://nexus.yuanzhibin.com:9080/repository/maven-snapshots/</url>
       </snapshotRepository>
     </distributionManagement>
@@ -182,7 +182,7 @@
            <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nxrm3-maven-plugin</artifactId>
-                <version>1.0.2</version>
+                <version>1.0.4</version>
                 <extensions>true</extensions>
                 <executions>
                   <execution>
